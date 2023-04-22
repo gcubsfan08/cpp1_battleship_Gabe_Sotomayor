@@ -58,14 +58,14 @@ protected:
             int randomGuessY = 1 + (rand() % 100);
 
             //ResponseType randomResponse = ;
-            Guess randomGuess;
-            randomGuess.x = randomGuessX;
-            randomGuess.y = randomGuessY;
+            Guess guessRandomCurrent;
+            guessRandomCurrent.x = randomGuessX;
+            guessRandomCurrent.y = randomGuessY;
 
             //Evaluating the random guess
             if (this->board->guess(randomGuessX, randomGuessY) == ResponseType::HIT)
             {
-                rightGuesses.push_back(randomGuess);
+                rightGuesses.push_back(guessRandomCurrent);
                 hits += 1;
             }
             else if (this->board->guess(randomGuessX, randomGuessY) == ResponseType::NEARMISS)
@@ -106,7 +106,7 @@ protected:
             }
             else if (this->board->guess(randomGuessX, randomGuessY) == ResponseType::MISS)
             {
-                wrongGuesses.push_back(randomGuess);
+                wrongGuesses.push_back(guessRandomCurrent);
             }
         }
         //Test for solve method to return SHIP_COUNT
