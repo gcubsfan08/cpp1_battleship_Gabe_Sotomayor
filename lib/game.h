@@ -109,8 +109,7 @@ protected:
                 wrongGuesses.push_back(guessRandomCurrent);
             }
         }
-        //Test for solve method to return SHIP_COUNT
-        return SHIP_COUNT;
+        return hits;
     }
     bool TestPreviouslyGuessed(int x, int y)
     {
